@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS ai_gcp_iam;
+
+USE ai_gcp_iam;
+
+CREATE TABLE IF NOT EXISTS iam_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
+    disabled BOOLEAN
+);
+
+CREATE TABLE IF NOT EXISTS iam_ai_alerts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255),
+    alert_text VARCHAR(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
